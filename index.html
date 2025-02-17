@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Page with AR Button</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+    <!-- Font Awesome (Ensure fas.js includes FA or replace with CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+        .ar-button {
+            position: fixed;
+            bottom: 70px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #3a71b2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+        .ar-button:hover {
+            background-color: #315c92;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe src="https://andaz-nouska.com/product/tapis-naturel-en-laine-bleue/"></iframe>
+
+    <button class="ar-button" onclick="window.app.showChair(1)">
+        <i class="fa-solid fa-vr-cardboard" style="color: #ffffff;"></i>
+    </button>
+
+    <script src="./fas.js"></script>
+    <script type="module">
+        import { App } from './app.js';
+
+        document.addEventListener("DOMContentLoaded", function(){
+            const app = new App();
+            window.app = app;
+        });
+    </script>
+
+</body>
+</html>
